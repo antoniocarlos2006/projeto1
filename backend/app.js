@@ -13,7 +13,7 @@ app.use('/api/produtos', produtoRoutes); // Rotas para produtos
 app.use('/api/fornecedores', fornecedorRoutes); // Rotas para fornecedores
 app.use('/api/associacoes', associacaoRoutes); // Rotas para associações
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 
 async function startServer() {
   try {
