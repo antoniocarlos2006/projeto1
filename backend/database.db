@@ -1,0 +1,26 @@
+-- Tabela de produtos
+CREATE TABLE produtos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL,
+  descricao TEXT,
+  preco REAL,
+  codigoBarras TEXT
+);
+
+-- Tabela de fornecedores
+CREATE TABLE fornecedores (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL,
+  cnpj TEXT,
+  endereco TEXT,
+  contato TEXT
+);
+
+-- Tabela de associação produto/fornecedor
+CREATE TABLE associacoes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  produtoId INTEGER,
+  fornecedorId INTEGER,
+  FOREIGN KEY (produtoId) REFERENCES produtos(id),
+  FOREIGN KEY (fornecedorId) REFERENCES fornecedores(id)
+);
